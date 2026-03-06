@@ -8,9 +8,15 @@ headers = {
 
 body = {
     "jsonrpc": "2.0",
-    "method": "tools/list",
-    "params":{},
-    "id": 1
+    "method": "tools/call",
+    "params":{
+        "name" :"tool_subtract",
+        "arguments":{
+            "n1": 500,
+            "n2": 300
+        }
+    },
+    "id": 2
 }
 
 res=requests.post(url=url, headers=headers, json=body)
