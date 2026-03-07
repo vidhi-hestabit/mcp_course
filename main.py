@@ -6,7 +6,7 @@ from my_tool.math_tools import plus_function, subtract_function
 from my_resource.my_doc import read_file_function, read_file_function_dynamic
 from my_prompt.error_prompt import hello, user_error
 
-app = FastMCP(name="my_server", stateless_http=True)
+app = FastMCP(name="my_server")
 
 
 @app.tool(name="plus", description="This is a plus function tool")
