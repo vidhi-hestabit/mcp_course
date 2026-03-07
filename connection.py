@@ -11,10 +11,13 @@ async def main():
 
         # # print("res2:", res2)
         # # print("res:", res)
-        res=await client.read_resource("file:///doc/notes.txt")
+        # res=await client.read_resource("file:///doc/notes.txt")
 
-        res1=await client.read_resource("file:///doc/my_python_file.py")
-        print("res:", res.contents[0].text)
-        print("res1:", res1.contents[0].text)
+        # res1=await client.read_resource("file:///doc/my_python_file.py")
+        # print("res:", res.contents[0].text)
+        # print("res1:", res1.contents[0].text)
+        res=await client.call_prompt(name="user_error_prompt", arguments={"error": "This is an error message"})
+        for item in res.messages:
+            print("role:", item.role, "content:", item.content)
 
 asyncio.run(main())

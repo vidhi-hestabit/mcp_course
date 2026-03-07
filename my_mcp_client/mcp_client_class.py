@@ -45,7 +45,14 @@ class MCPClient:
         res=await self.session.read_resource(uri=uri)
         return res
     
+    async def list_prompts(self):
+        res=await self.session.list_prompts()
+        prompts=res.prompts
+        print("\n Connected prompts:", [prompt.name for prompt in prompts])
 
+    async def call_prompt(self, name:str, arguments:dict):
+        res=await self.session.get_prompt(name=name, arguments=arguments)
+        return res
     
     async def plus(self):
         return "Plus working..."
