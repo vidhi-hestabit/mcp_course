@@ -31,3 +31,6 @@ Transport :
     - client must incluse Accept header, listing both application/json & text/event-stream.
     - body of POST request must be a single JSON-RPC request, notification or response.
 
+-- SAMPLING :
+Tools interact with LLMs through sampling(generating text)...
+
