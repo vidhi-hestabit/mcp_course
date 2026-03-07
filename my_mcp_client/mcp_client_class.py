@@ -31,6 +31,10 @@ class MCPClient:
         res=await self.session.call_tool(name=tool_name, arguments=arg)
         return res
     
+    async def read_resource(self, uri:str):
+        res=await self.session.read_resource(uri=uri)
+        return res
+    
     async def plus(self):
         return "Plus working..."
     

@@ -8,13 +8,14 @@ headers = {
 
 body = {
     "jsonrpc": "2.0",
-    "method": "tools/call",
+    "method": "resources/read",
     "params":{
-        "name" :"tool_subtract",
-        "arguments":{
-            "n1": 500,
-            "n2": 300
-        }
+        "uri": "file:///doc/my_python_file.py"
+        # "name" :"tool_subtract",
+        # "arguments":{
+        #     "n1": 500,
+        #     "n2": 300
+        # }
     },
     "id": 2
 }
