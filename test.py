@@ -8,7 +8,7 @@ headers = {
 
 body = {
     "jsonrpc": "2.0",
-    "method": "resources/read",
+    "method": "resources/templates/list",
     "params":{
         "uri": "file:///doc/my_python_file.py"
         # "name" :"tool_subtract",

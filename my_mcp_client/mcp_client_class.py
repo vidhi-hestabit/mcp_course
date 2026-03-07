@@ -31,9 +31,21 @@ class MCPClient:
         res=await self.session.call_tool(name=tool_name, arguments=arg)
         return res
     
+    async def list_resources(self):
+        res=await self.session.list_resources()
+        return res.resources
+    
+    async def list_resources_template(self):
+        res=await self.session.list_resource_templates()
+        resources= res.resourceTemplates
+        print("\n Connected resource templates:", [resource.name for resource in resources])
+    
+
     async def read_resource(self, uri:str):
         res=await self.session.read_resource(uri=uri)
         return res
+    
+
     
     async def plus(self):
         return "Plus working..."

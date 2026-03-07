@@ -1,6 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 from my_tool.math_tools import plus_function, subtract_function
-from my_resource.my_doc import read_file_function
+from my_resource.my_doc import read_file_function, read_file_function_dynamic
+
 
 app=FastMCP(name="my_server", stateless_http=True)
 
@@ -20,6 +21,12 @@ async def tool_subtract(n1:int, n2:int)-> str:
 def read_file():
     """This function reads a python file and returns its content as a string"""
     return read_file_function()
-    
+
+
+@app.resource("file:///doc/{path}", mime_type="text/plain")
+async def read_file_dynamic(path: str):
+    """This function reads a python file and returns its content as a string"""
+    return read_file_function_dynamic(path)
+
 
 mcp_app=app.streamable_http_app()
